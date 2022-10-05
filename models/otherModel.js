@@ -5,6 +5,7 @@ const otherSchema = new mongoose.Schema(
     name: { type: String, required: true },
     amount: { type: Number, required: true },
     date: { type: String, required: true },
+    person: {type: String, required: true },
   },
   { timestamps: true }
 );
