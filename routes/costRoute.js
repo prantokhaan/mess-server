@@ -38,7 +38,7 @@ router.post("/editCost", async (req, res) => {
 
 router.post("/deleteCost", async (req, res) => {
   try {
-    await Cost.findOneAndDelete({ _id: req.body.carId });
+    await Cost.findOneAndDelete({ _id: req.body.costId });
 
     res.send("cost deleted successfully");
   } catch (error) {
