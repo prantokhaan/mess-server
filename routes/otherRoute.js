@@ -36,11 +36,11 @@ router.post("/editOther", async (req, res) => {
   }
 });
 
-router.post("/deleteCost", async (req, res) => {
+router.post("/deleteOther", async (req, res) => {
   try {
-    await Other.findOneAndDelete({ _id: req.body.carId });
+    await Other.findOneAndDelete({ _id: req.body.otherId });
 
-    res.send("other cost deleted successfully");
+    res.send("Other cost deleted successfully");
   } catch (error) {
     return res.status(400).json(error);
   }
