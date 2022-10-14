@@ -13,6 +13,10 @@ app.use("/member/", require("./routes/memberRoute"));
 app.use("/cost/", require("./routes/costRoute"));
 app.use("/other/", require("./routes/otherRoute"));
 app.use("/bazar/", require("./routes/bazarRoute"));
+app.use("/not/", require("./routes/notRoute"));
+
+
+
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(port, () => console.log("Backend Server Started"));
