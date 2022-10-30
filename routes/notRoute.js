@@ -26,6 +26,7 @@ router.post("/editNot", async (req, res) => {
     const not = await Not.findOne({ _id: req.body._id });
     not.name = req.body.name;
     not.date = req.body.date;
+    not.status = req.body.status;
 
     await not.save();
 
@@ -45,7 +46,7 @@ router.post("/deleteNot", async (req, res) => {
   }
 });
 
-router.post("/updateStatus", async (req, res) => {
+router.post("/updateStatus/:id", async (req, res) => {
   try {
     await Not.findOne({ _id: req.body.notId });
     const newStatus = req.body;
