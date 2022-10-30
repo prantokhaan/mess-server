@@ -45,5 +45,22 @@ router.post("/deleteNot", async (req, res) => {
   }
 });
 
+router.post("/updateStatus", async (req, res) => {
+  try {
+    await Not.findOne({ _id: req.body.notId });
+    const newStatus = req.body;
+    const options = { upsert: true };
+    const updateStatus = {
+      $set: {
+        status: newStatus[0],
+      },
+    };
+    await not.save();
+
+    res.send("Notification updated successfully");
+  } catch (error) {
+    return res.status(400).json(error);
+  }
+})
 
 module.exports = router;
