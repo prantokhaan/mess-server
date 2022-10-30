@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const notSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    data: { type: String, required: true },
-    status: {type: String, required: true },
+    name: { type: String, required: false },
+    data: { type: String, required: false },
+    status: {type: String, required: false },
   },
   { timestamps: true }
 );
