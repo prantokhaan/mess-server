@@ -4,6 +4,7 @@ const notSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     data: { type: String, required: true },
+    status: {type: String, required: true },
   },
   { timestamps: true }
 );
