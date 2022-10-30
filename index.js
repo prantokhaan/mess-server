@@ -6,6 +6,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/users/", require("./routes/usersRoute"));
 app.use("/deposit/", require("./routes/depositRoute"));
