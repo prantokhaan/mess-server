@@ -41,6 +41,7 @@ router.post("/editUser", async (req, res) => {
     const user = await User.findOne({ _id: req.body._id });
     user.username = req.body.username;
     user.password = req.body.password;
+    user.role = req.body.role;
 
     await user.save();
 
